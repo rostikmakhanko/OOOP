@@ -10,13 +10,12 @@ using namespace std;
 
 class Book
 {
-public://!!!!!!!!!!!!!!!!!!!!!!it must be private
+private:
     string title;
     vector<string> authors;
     int day,month,year;
     int number_of_pages;
     string short_annotation;
-    vector<Character> characters;
 
 public:
     friend bool operator>(const Book& a,const Book& b);
@@ -24,6 +23,23 @@ public:
     friend bool operator==(const Book& a,const Book& b);
 
     void print_info();
+    void set_title(string);
+    void add_author(string);
+    void set_day(int);
+    void set_month(int);
+    void set_year(int);
+    void set_number_of_pages(int);
+    void set_short_annotation(string);
+    void clear();
+
+    string get_title();
+    vector<string> get_authors();
+    int get_day();
+    int get_month();
+    int get_year();
+    int get_number_of_pages();
+    string get_short_annotation();
+
 };
 
 #endif // BOOK_H

@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::ClickFocus</enum>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>20</y>
+      <width>161</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Add note</string>
+    </property>
+    <widget class="QPushButton" name="addNoteButton">
+     <property name="geometry">
+      <rect>
+       <x>43</x>
+       <y>156</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Add note</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="addNoteTextEdit">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>70</y>
+       <width>104</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::ClickFocus</enum>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="addNoteComboBox">
+     <property name="geometry">
+      <rect>
+       <x>37</x>
+       <y>30</y>
+       <width>91</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Work</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Personal</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Hobbies</string>
+      </property>
+     </item>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>20</y>
+      <width>141</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Your notes</string>
+    </property>
+    <widget class="QListWidget" name="yourNotesListWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>121</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="mouseTracking">
+      <bool>false</bool>
+     </property>
+     <property name="tabletTracking">
+      <bool>false</bool>
+     </property>
+     <property name="dragEnabled">
+      <bool>false</bool>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::MultiSelection</enum>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="yourNotesComboBox">
+     <property name="geometry">
+      <rect>
+       <x>23</x>
+       <y>30</y>
+       <width>91</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Work</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Personal</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Hobbies</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QPushButton" name="moveToArchiveButton">
+     <property name="geometry">
+      <rect>
+       <x>25</x>
+       <y>180</y>
+       <width>91</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Move to archive</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="exportButton">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>206</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Export notes of this
+ type to the file</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="exportAllButton">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>250</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Export ALL notes 
+to the file</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_3">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>20</y>
+      <width>161</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Archive</string>
+    </property>
+    <widget class="QListWidget" name="archiveListWidget">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>121</width>
+       <height>131</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="archiveUpdateButton">
+     <property name="geometry">
+      <rect>
+       <x>34</x>
+       <y>200</y>
+       <width>91</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Update archive</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="archiveDeleteButton">
+     <property name="geometry">
+      <rect>
+       <x>33</x>
+       <y>153</y>
+       <width>91</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Delete</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="archiveDeleteAllButton">
+     <property name="geometry">
+      <rect>
+       <x>34</x>
+       <y>177</y>
+       <width>91</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Delete All</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>640</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuNotes">
+    <property name="title">
+     <string>Notes</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuArchive">
+    <property name="title">
+     <string>Archive</string>
+    </property>
+    <addaction name="separator"/>
+   </widget>
+   <addaction name="menuNotes"/>
+   <addaction name="menuArchive"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
