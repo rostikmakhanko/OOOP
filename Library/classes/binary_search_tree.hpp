@@ -2,6 +2,7 @@
 #define BINARY_SEARCH_TREE_H
 
 #include <iostream>
+#include <queue>
 #include "book/book.hpp"
 
 using namespace std;
@@ -18,9 +19,11 @@ class BinarySearchTree
     };
 
     TreeNode* root;
-    int size;
+    int size,count_of_series;
 
     void inorder_traversal(TreeNode* cur);
+
+    vector<string> title_traversal(TreeNode* cur);
 
     TreeNode* find(TreeNode* cur,Book val1);
 
@@ -34,6 +37,8 @@ class BinarySearchTree
 
     public:
     BinarySearchTree();
+
+    vector<string> get_books_titles();
 
     void paste(Book val1);
 

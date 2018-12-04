@@ -9,6 +9,27 @@ string Character :: get_type_of_role(int x)
     if (x==2) return "episode role";
 }
 
+void Character :: add_name(string s)
+{
+    names.push_back(s);
+}
+
+/**
+    Adding book in which this character is playing role
+
+    @param s - title of book, t - type of role
+*/
+void Character :: add_book(string s,int t)
+{
+    books.push_back(make_pair(s,t));
+}
+
+void Character :: clear()
+{
+    names.clear();
+    books.clear();
+}
+
 void Character :: print_info()
 {
     cout<<names[0]<<" ";

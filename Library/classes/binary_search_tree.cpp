@@ -14,6 +14,38 @@ void BinarySearchTree :: inorder_traversal(TreeNode* cur)
     inorder_traversal(cur->right);
 }
 
+/**
+    Traversal for getting vector of titles of all books in library
+
+    @param Node of tree
+    @return Vector of books' titles in library
+*/
+vector<string> BinarySearchTree :: title_traversal(TreeNode* cur)
+{
+    vector<string> ans;
+    queue<TreeNode*> q;
+    TreeNode* cur1=cur;
+    while (cur1!=NULL)
+    {
+        ans.push_back(cur1->val.get_title());
+        q.push(cur1->left);
+        q.push(cur1->right);
+        while (!q.empty())
+        {
+            cur1=q.front();
+            q.pop();
+            if (cur1!=NULL) {break;}
+        }
+    }
+    return ans;
+}
+
+/**
+    Finding in tree book with title same as val1 have
+
+    @param Node of tree, book which want to find
+    @return NULL if there's no book with such title, pointer on Node of founded book else
+*/
 BinarySearchTree :: TreeNode* BinarySearchTree :: find(BinarySearchTree :: TreeNode* cur,Book val1)
 {
     if (cur==NULL) {return cur;}
@@ -22,6 +54,12 @@ BinarySearchTree :: TreeNode* BinarySearchTree :: find(BinarySearchTree :: TreeN
     else {return find(cur->right,val1);}
 }
 
+/**
+    Finding first book in alphabetic order
+
+    @param Node of tree in which we're doing search
+    @return @return NULL if there's no book in library, pointer on Node of founded book else
+*/
 BinarySearchTree :: TreeNode* BinarySearchTree :: find_min(BinarySearchTree :: TreeNode* cur)
 {
     if (cur==NULL) {return cur;}
@@ -111,11 +149,17 @@ bool BinarySearchTree :: find(Book val1)
     else {return 1;}
 }
 
+vector<string> BinarySearchTree :: get_books_titles()
+{
+    return title_traversal(root);
+}
+
 void BinarySearchTree :: print()
 {
-    cout<<"Now library have these books:"<<endl;
+    cout<<"Now library has these "<<size<<" books:"<<endl;
     cout<<endl;
     inorder_traversal(root);
     cout<<"-----------------------------------"<<endl;
+    cout<<endl;
 }
 

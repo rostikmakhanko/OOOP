@@ -14,7 +14,12 @@ private:
 
 public:
     vector<pair<string,int>> books;//title of book and role (0-main character, 1 - supporting, 2 - episode role)
+
+    void add_name(string);
+    void add_book(string,int);
+    void clear();
     void print_info();
+
 };
 
 #endif // CHARACTER_H
