@@ -2,6 +2,12 @@
 
 using namespace std;
 
+/**
+    Convert int value of role to string
+
+    @param x - type in integer format
+    @return String representation of role type
+*/
 string Character :: get_type_of_role(int x)
 {
     if (x==0) return "main role";
@@ -9,6 +15,11 @@ string Character :: get_type_of_role(int x)
     if (x==2) return "episode role";
 }
 
+/**
+    Adding name or nickname for character
+
+    @param One string s - name or nickname
+*/
 void Character :: add_name(string s)
 {
     names.push_back(s);
@@ -24,12 +35,15 @@ void Character :: add_book(string s,int t)
     books.push_back(make_pair(s,t));
 }
 
+///Clearing information about character
 void Character :: clear()
 {
     names.clear();
     books.clear();
 }
 
+
+///Print information about character
 void Character :: print_info()
 {
     cout<<names[0]<<" ";

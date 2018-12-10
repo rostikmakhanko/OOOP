@@ -2,13 +2,20 @@
 
 using namespace std;
 
+/**
+    Constructor for Series, dividing books into series.
+    Books are in one series if they have same main or supporting character
+
+    @param t - library with books, c - vector of characters
+*/
 Series :: Series(BinarySearchTree &t,vector<Character> &c)
 {
     int n=c.size(),count_of_series=0;
     map<string,int> x;//x[s]=a - book with title s is part of series number a
     for (int i=0;i<n;i++)
     {
-        int m=c[i].books.size(),number_of_series=1e9+7;//number_of_series - number of series in which all books where play i-th character will go
+        //number_of_series - number of series in which all books where play i-th character will go
+        int m=c[i].books.size(),number_of_series=1e9+7;
         for (int j=0;j<m;j++)
         {
             if (c[i].books[j].second==2) {continue;}
@@ -51,6 +58,7 @@ Series :: Series(BinarySearchTree &t,vector<Character> &c)
     series=series1;
 }
 
+///Print all series and for each series print titles of books which consists in this series
 void Series :: print()
 {
     cout<<"All book series in library:"<<endl;
