@@ -8,6 +8,7 @@
 #include <vector>
 #include <string>
 #include <string.h>
+#include <QListWidgetItem>
 
 using namespace std;
 
@@ -42,11 +43,17 @@ private slots:
 
     void on_archiveDeleteAllButton_clicked();
 
+    void on_yourNotesListWidget_itemDoubleClicked(QListWidgetItem *item);
+
+    int get_index_of_yourNotesListWidget_item(QListWidgetItem *item);
+
+    void on_addNewCategoryPushButton_clicked();
+
 private:
     void moveToArchive(int index);
 
     Ui::MainWindow *ui;
-    QVector<QVector<QString>> notes;
+    QVector<QVector<QString>> titles,notes;
     QVector<QString> archive;
     QShortcut *shortcut_key;
 };
