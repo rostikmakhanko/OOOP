@@ -29,6 +29,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+//Update list of your notes
 void MainWindow::on_yourNotesComboBox_currentIndexChanged(int index)
 {
     ui->yourNotesListWidget->clear();
@@ -36,6 +37,7 @@ void MainWindow::on_yourNotesComboBox_currentIndexChanged(int index)
         ui->yourNotesListWidget->addItem(titles[index][i]);
 }
 
+//Adding new note
 void MainWindow::on_addNoteButton_clicked()
 {
     QString note=ui->addNoteTextEdit->toPlainText();
@@ -51,6 +53,7 @@ void MainWindow::on_addNoteButton_clicked()
     ui->addNoteTextEdit->clear();
 }
 
+//Update archive
 void MainWindow::on_archiveUpdateButton_clicked()
 {
     ui->archiveListWidget->clear();
@@ -58,6 +61,7 @@ void MainWindow::on_archiveUpdateButton_clicked()
         ui->archiveListWidget->addItem(archive[i]);
 }
 
+//Move index-th item in ListWidget to archive
 void MainWindow::moveToArchive(int index)
 {
     int your_notes_combo_box_index=ui->yourNotesComboBox->currentIndex();
@@ -70,6 +74,7 @@ void MainWindow::moveToArchive(int index)
     on_yourNotesComboBox_currentIndexChanged(your_notes_combo_box_index);
 }
 
+//Move all choosed in ListWidget items to the archive
 void MainWindow::on_moveToArchiveButton_clicked()
 {
     QItemSelectionModel *selections=ui->yourNotesListWidget->selectionModel();
@@ -86,6 +91,7 @@ void MainWindow::on_moveToArchiveButton_clicked()
     }
 }
 
+//Cleare choosed item from archive
 void MainWindow::on_archiveDeleteButton_clicked()
 {
     int archive_list_index=ui->archiveListWidget->currentIndex().row();
@@ -94,6 +100,7 @@ void MainWindow::on_archiveDeleteButton_clicked()
     on_archiveUpdateButton_clicked();
 }
 
+//Export all notes from choosed in ComboBox category to the .txt file
 void MainWindow::on_exportButton_clicked()
 {
     int your_notes_combo_box_index=ui->yourNotesComboBox->currentIndex();
@@ -114,6 +121,7 @@ void MainWindow::on_exportButton_clicked()
     }
 }
 
+//Export all notes to the .txt file
 void MainWindow::on_exportAllButton_clicked()
 {
     freopen("All notes.txt","w",stdout);
@@ -133,6 +141,7 @@ void MainWindow::on_exportAllButton_clicked()
     }
 }
 
+//V button on keyboard clicked - adding note from clipboard to notes
 void MainWindow::on_shortcut_pushed()
 {
     QString clipboard_text=QApplication::clipboard()->text();
@@ -143,6 +152,7 @@ void MainWindow::on_shortcut_pushed()
     ui->addNoteTextEdit->setText(old_note);
 }
 
+//Deleting all items from archive
 void MainWindow::on_archiveDeleteAllButton_clicked()
 {
     while (archive.size()>0)
@@ -152,6 +162,7 @@ void MainWindow::on_archiveDeleteAllButton_clicked()
     on_archiveUpdateButton_clicked();
 }
 
+//Get index of double clicked item from ListWidget
 int MainWindow::get_index_of_yourNotesListWidget_item(QListWidgetItem *item)
 {
     for (int i=0;i<ui->yourNotesListWidget->count();i++)
@@ -159,6 +170,7 @@ int MainWindow::get_index_of_yourNotesListWidget_item(QListWidgetItem *item)
     return -1;
 }
 
+//Show double clicked item in ChoosedNote window
 void MainWindow::on_yourNotesListWidget_itemDoubleClicked(QListWidgetItem *item)
 {
     int your_notes_combo_box_index=ui->yourNotesComboBox->currentIndex();
@@ -167,6 +179,7 @@ void MainWindow::on_yourNotesListWidget_itemDoubleClicked(QListWidgetItem *item)
     ui->choosedNotePlainTextEdit->setPlainText(notes[your_notes_combo_box_index][cur]);
 }
 
+//Add new category
 void MainWindow::on_addNewCategoryPushButton_clicked()
 {
     QString s=ui->addNewCategoryLineEdit->text();
